@@ -7,12 +7,6 @@
 
         <a href="{{ route('produtos.inserir') }}" type="button" class="mt-4 mb-4 btn btn-primary">Inserir Produto</a>
 
-        <!-- Scripts DataTables -->
-        <script src="{{ URL::asset('assets/datatables/jquery.dataTables.min.js')}}"></script>
-        <script src="{{ URL::asset('assets/datatables/dataTables.bootstrap4.min.js')}}"></script>
-        <script src="{{ URL::asset('assets/datatables/datatables-demo.js') }}"></script>
-
-
    <!-- DataTales Example -->
         <div class="card shadow mb-4">
 
@@ -35,9 +29,9 @@
                     <td> {{ $produto->valor }} </td>
                     <td> {{ $produto->estoque }} </td>
                     <td>
-                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-eye text-primary"></i></a>
-                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-edit text-primary"></i></a>
-                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-trash text-primary"></i></a>
+                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-eye text-primary mr-1"></i></a>
+                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-edit text-info mr-1"></i></a>
+                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-trash text-danger mr-1"></i></a>
                     </td>
                 </tr>
                 @endforeach

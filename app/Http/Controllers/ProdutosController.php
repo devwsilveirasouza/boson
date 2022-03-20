@@ -35,9 +35,9 @@ class ProdutosController extends Controller
         $produto->estoque = $request->estoque;
         // Teste de retorno
         //return $request;
-       $produto->save();
+        $produto->save();
 
-       return redirect()->route('produtos');
+        return redirect()->route('produtos');
     }
     /*
     {
@@ -51,9 +51,7 @@ class ProdutosController extends Controller
     {
         $produto = Produto::find($id);
         return view('produtos.show', ['produto' => $produto]);
-
     }
-
     /*
     public function show(Produto $produto)
     {
@@ -61,5 +59,20 @@ class ProdutosController extends Controller
         ->with(['produto' => $produto]);
     }
     */
+    public function edit(Produto $produto)
+    {
+        return view('produtos.edit', ['produto' => $produto]);
+    }
 
+    public function editar(Request $request, Produto $produto)
+    {
+
+        $produto->nome = $request->nome;
+        $produto->descricao = $request->descricao;
+        $produto->valor = $request->valor;
+        $produto->estoque = $request->estoque;
+        $produto->save();
+
+        return redirect()->route('produtos');
+    }
 }

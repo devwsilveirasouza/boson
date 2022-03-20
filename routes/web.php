@@ -17,7 +17,9 @@ Route::get('produtos/{produto}', [ProdutosController::class, 'show'])->name('pro
 //Route::get('produtos/{produto}/{valor?}', [ProdutosController::class, 'show'])->name('produtos.descricao');
 // Rota da página index do projeto
 Route::get('produtos', [ProdutosController::class, 'index'])->name('produtos');
-
+// Rota para cadastrar produtos
 Route::post('produtos', [ProdutosController::class, 'insert'])->name('produtos.insert');
-
-
+// Rota para editar produtos
+Route::get('produtos/{produto}/edit', [ProdutosController::class, 'edit'])->name('produtos.edit');
+// Rota para edição dos produtos
+Route::put('produtos/{produto}', [ProdutosController::class, 'editar'])->name('produtos.editar');

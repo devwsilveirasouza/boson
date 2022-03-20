@@ -30,7 +30,7 @@
                     <td> {{ $produto->estoque }} </td>
                     <td>
                         <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-eye text-primary mr-1"></i></a>
-                        <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-edit text-info mr-1"></i></a>
+                        <a href=" {{route('produtos.edit', [$produto -> id])}} "><i class="fas fa-edit text-info mr-1"></i></a>
                         <a href=" {{route('produtos.descricao', [$produto -> id])}} "><i class="fas fa-trash text-danger mr-1"></i></a>
                     </td>
                 </tr>

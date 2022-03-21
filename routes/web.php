@@ -23,3 +23,7 @@ Route::post('produtos', [ProdutosController::class, 'insert'])->name('produtos.i
 Route::get('produtos/{produto}/edit', [ProdutosController::class, 'edit'])->name('produtos.edit');
 // Rota para edição dos produtos
 Route::put('produtos/{produto}', [ProdutosController::class, 'editar'])->name('produtos.editar');
+// Rota para excluir produto
+Route::get('produtos/{produto}/delete', [ProdutosController::class, 'modal'])->name('produtos.modal');
+// Rotas para exclusão do registro após confirmação pela modal
+Route::delete('produtos/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');

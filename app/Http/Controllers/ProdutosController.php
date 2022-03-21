@@ -66,7 +66,6 @@ class ProdutosController extends Controller
 
     public function editar(Request $request, Produto $produto)
     {
-
         $produto->nome = $request->nome;
         $produto->descricao = $request->descricao;
         $produto->valor = $request->valor;
@@ -75,4 +74,18 @@ class ProdutosController extends Controller
 
         return redirect()->route('produtos');
     }
+    // Método para excluir registro chamando uma modal
+    public function delete(Produto $produto)
+    {
+        $produto->delete();
+        return redirect()->route('produtos');
+    }
+
+    /*
+    public function modal($id)
+    {
+        $produtos = produto::orderby('id', 'desc')->paginate();
+        return view('produtos.index', ['produtos' => $produtos, 'id' => $id]);
+    }
+    */
 }
